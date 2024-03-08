@@ -105,7 +105,8 @@ const Footer: React.FC<FooterProps> = ({ t, color }) => {
                     {t('Don\'t have an account?')}
                 </Txt>
                 <Txt
-                    onPress={() => navigate(screens.SIGNIN)}
+
+                    onPress={() => navigate(screens.SIGNUP)}
                     size={width * 0.04}
                     fontFamily={fonts.MAINB}
                     color={colors.mainColor}

@@ -6,8 +6,6 @@ import Box from '@common/Box'
 import { colors } from '@themes/colors'
 import Txt from '@common/Txt'
 import { useTranslation } from 'react-i18next'
-import changeNavigationBarColor from 'react-native-navigation-bar-color'
-import { hideNavigationBar } from 'react-native-navigation-bar-color'
 import { BOTTOM_TAB_HEIGHT } from '@utils/responsive'
 import { Home2, Bag2, ShoppingCart, Wallet2, Profile } from 'iconsax-react-native'
 import HomeStack from './HomeStack'
@@ -16,12 +14,19 @@ import WalletStack from './WalletStack'
 import ProfileStack from './ProfileStack'
 import OrderStack from './OrderStack'
 
+interface TabProps {
+  size: number
+  title: string
+  component: React.FC
+  name: string
+  iconNotFocused: React.ReactNode
+  iconFocused: React.ReactNode
+}
+
 const Tab = createBottomTabNavigator()
 const AuthNavigation = () => {
-  changeNavigationBarColor('transparent', true, true)
-  hideNavigationBar()
   const { t } = useTranslation()
-  const tab = [
+  const tab: TabProps[] = [
     {
       size: 24,
       title: 'Home',
@@ -82,7 +87,7 @@ const AuthNavigation = () => {
       {tab.map((item, index) => {
         return (
           <Tab.Screen
-            key={index}
+            key={item.title}
             name={item.name}
             component={item.component}
             options={{
@@ -109,6 +114,4 @@ const AuthNavigation = () => {
   )
 }
 
-export default AuthNavigation
-
-const styles = StyleSheet.create({})
+export default React.memo(AuthNavigation)

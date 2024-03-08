@@ -5,6 +5,8 @@ import Scroll from '@common/Scroll'
 import { BOTTOM_TAB_HEIGHT } from '@utils/responsive'
 import { useTheme } from '@hooks/redux'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { StatusBar } from 'react-native'
+
 interface Props {
     bg?: string,
     styles?: any,
@@ -40,8 +42,7 @@ const KeyBoardSafe = ({
                 <Box
                     flex={1}
                     // isPaddingAdnroid
-                    paddingTop={Platform.OS === 'android' ? 0 : 0}
-                >
+                    paddingTop={Platform.OS === 'android' ? 0: 0}                >
                     <Scroll
                         flexGrow={1}
                         paddingBottom={paddingBottom || BOTTOM_TAB_HEIGHT / 2}

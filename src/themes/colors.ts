@@ -96,7 +96,9 @@ export const colors = {
     gray2: '#757575',
     gray3: '#E0E0E0',
     gray4: '#BDBDBD',
+    gray5: '#e6e6e6',
     white: '#ffffff',
     yellow: '#fdd835',
     focusinput: '#EBFAF1',
+    redDiscount: '#ff4141'
 }

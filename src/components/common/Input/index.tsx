@@ -99,8 +99,10 @@ const Input = forwardRef<TextInput, Props>(({
     borderTopRightRadius,
     borderBottomLeftRadius,
     coin,
+    autoFocus,
     returnKeyType,
     onSubmitEditing,
+    tintColorIconTwo,
     ...rest
 }: Props, ref) => {
     const insets = useSafeAreaInsets();
@@ -246,6 +248,7 @@ const Input = forwardRef<TextInput, Props>(({
                 onBlur={onBlurHandler}
                 returnKeyType={returnKeyType}
                 onSubmitEditing={onSubmitEditing}
+                autoFocus={autoFocus}
                 ref={ref}
             />
             {iconTwo &&
@@ -256,7 +259,8 @@ const Input = forwardRef<TextInput, Props>(({
                 >
                     <Img
                         source={iconTwo}
-                        tintColor={tintColors}
+                        // tintColor={tintColors}
+                        tintColor={tintColorIconTwo ? tintColorIconTwo : tintColors}
                         style={{
                             width: sizeIcon,
                             height: sizeIcon,
@@ -272,6 +276,8 @@ const Input = forwardRef<TextInput, Props>(({
 export default React.memo(Input);
 
 interface Props {
+    autoFocus?: any,
+    tintColorIconTwo?: any,
     returnKeyType?: 'done' | 'next' | 'go';
     onSubmitEditing?: () => void;
     value?: any,

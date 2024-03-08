@@ -2,20 +2,20 @@ import React from 'react'
 import Header from './Header'
 import Form from './Form'
 import { useTheme } from '@hooks/redux'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Platform } from 'react-native'
 import Scroll from '@common/Scroll'
 import KeyBoardSafe from '@reuse/KeyBoardSafe'
+import { width, height } from '@utils/responsive'
 
 const FillProfile = () => {
   const theme = useTheme()
   return (
     <KeyBoardSafe
-    extraRollHeight={50}
+      extraRollHeight={50}
     >
       <Scroll
         flex={1}
-        padding={24}
+        paddingHorizontal={width * 0.05}
+        paddingVertical={height * 0.01}
         backgroundColor={theme.bg}
       >
         <Header />

@@ -22,7 +22,8 @@ const HowToLogin = () => {
     return (
         <KeyBoardSafe>
             <Scroll
-                padding={24}
+                paddingHorizontal={width * 0.05}
+                paddingVertical={height * 0.01}
                 showsVerticalScrollIndicator={false}
                 paddingTop={height * 0.03}
             >

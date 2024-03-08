@@ -5,8 +5,12 @@ import LottieView from 'lottie-react-native'
 import Img from '@common/Img'
 import { navigate } from '@utils/navigationRef'
 import { screens } from '@contants/screens'
+import { useAppDispatch } from '@hooks/redux'
+import { setLogin } from '@redux/slice/userSlice'
 
 const Hello = () => {
+    const dispatch = useAppDispatch()
+    // dispatch(setLogin(false))
     React.useEffect(() => {
         setTimeout(() => {
             navigate(screens.MAIN)

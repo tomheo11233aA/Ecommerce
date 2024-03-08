@@ -10,6 +10,9 @@ const initialState: IUSerSlice = {
     },
     theme: 'light',
     globalLoading: false,
+    recentSearches: [
+        "React Native",
+    ],
 };
 
 const userSlice = createSlice({
@@ -28,6 +31,19 @@ const userSlice = createSlice({
         setGlobalLoading: (state, action: PayloadAction<boolean>) => {
             state.globalLoading = action.payload;
         },
+        addRecentSearch: (state, action: PayloadAction<string>) => {
+            if (!state.recentSearches) {
+                state.recentSearches = [];
+            }
+            const filteredSearches = state.recentSearches.filter(item => item !== action.payload);
+            state.recentSearches = [action.payload, ...filteredSearches].slice(0, 10);
+        },
+        removeRecentSearch: (state, action: PayloadAction<string>) => {
+            state.recentSearches = state.recentSearches.filter((item) => item !== action.payload);
+        },
+        clearAllRecentSearch: (state) => {
+            state.recentSearches = [];
+        },
     },
 });
 
@@ -36,6 +52,9 @@ export const {
     setLogin,
     setTheme,
     setGlobalLoading,
+    addRecentSearch,
+    removeRecentSearch,
+    clearAllRecentSearch,
 } = userSlice.actions;
 
 export default userSlice

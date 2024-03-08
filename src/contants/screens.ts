@@ -17,4 +17,5 @@ export const screens = {
     ORDER: 'Order',
     WALLET: 'Wallet',
     PROFILE: 'Profile',
+    SEARCH: 'Search',
 }
