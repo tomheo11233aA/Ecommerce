@@ -6,4 +6,15 @@ export const screens = {
     SIGNIN: 'Signin',
     HOWTOLOGIN: 'HowToLogin',
     FILLPROFILE: 'FillProfile',
+
+    HOMESTACK: 'HomeStack',
+    CARTSTACK: 'CartStack',
+    ORDERSTACK: 'OrderStack',
+    WALLETSTACK: 'WalletStack',
+    PROFILESTACK: 'ProfileStack',
+    HOME: 'Home',
+    CART: 'Cart',
+    ORDER: 'Order',
+    WALLET: 'Wallet',
+    PROFILE: 'Profile',
 }
